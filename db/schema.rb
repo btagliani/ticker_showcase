@@ -10,20 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_04_08_235525) do
+ActiveRecord::Schema[7.1].define(version: 2024_04_09_205449) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "stocks", force: :cascade do |t|
     t.string "ticker"
-    t.date "date"
-    t.decimal "open"
-    t.decimal "close"
-    t.decimal "high"
-    t.decimal "low"
-    t.bigint "volume"
+    t.string "year"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.decimal "average_price"
+    t.bigint "max_volume"
+    t.bigint "min_volume"
+    t.decimal "max_price"
+    t.decimal "min_price"
+    t.integer "average_volume"
   end
 
 end

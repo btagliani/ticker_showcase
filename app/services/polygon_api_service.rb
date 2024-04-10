@@ -4,6 +4,8 @@ class PolygonApiService
   include HTTParty
   base_uri 'https://api.polygon.io'
 
+  class ApiError < StandardError; end
+
   def initialize(ticker:, year:)
     @ticker = ticker
     @year = year
@@ -12,8 +14,15 @@ class PolygonApiService
   end
 
   def fetch_stock_data
-    self.class.get(
-      "/v2/aggs/ticker/#{@options[:query][:ticker]}/range/#{@options[:query][:range]}/#{@options[:query][:from]}/#{@options[:query][:to]}", @options
-    )
+    begin
+      response = self.class.get(
+        "/v2/aggs/ticker/#{@ticker}/range/1/day/#{@year}-01-01/#{@year}-12-31",
+        @options
+      )
+    rescue StandardError => e
+      raise ApiError, e.message
+    end
+
+    response
   end
 end

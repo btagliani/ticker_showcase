@@ -1,5 +1,9 @@
 # PortraitSpa Full Stack Application
 
+
+https://github.com/btagliani/portrait_spa/assets/804303/b5c84156-b89e-448e-aabf-fb2a7543f643
+
+
 This project is a single-page application that allows users to input a stock ticker symbol and displays the average stock price, maximum/minimum volume, and maximum/minimum stock price for a given date range.
 
 ## Features

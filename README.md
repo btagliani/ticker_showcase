@@ -1,4 +1,4 @@
-# PortraitSpa Full Stack Application
+# Ticker - Showcase of a Full Stack Application
 
 
 https://github.com/btagliani/portrait_spa/assets/804303/b5c84156-b89e-448e-aabf-fb2a7543f643
